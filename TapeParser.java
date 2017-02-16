@@ -7,10 +7,12 @@ public class TapeParser
 {
     private static int streamPointer, streamEnd, iterNumber;
     private static String tape;
+    private static Buffer buf;
 
     // parser constructor
     public TapeParser(String filePath) throws FileNotFoundException, IOException
     {
+        buf        = new Buffer();
         tape       = new String(Files.readAllBytes(Paths.get(filePath)));
         streamEnd  = tape.length();
         iterNumber = 0;
@@ -64,7 +66,8 @@ public class TapeParser
                     m.incrementPointer();
                     break;
                 case '.':
-                    System.out.print((char)m.getCurrentCellValue());
+                    // store new byte in buffer
+                    buf.append((char)m.getCurrentCellValue());
                     break;
                 case ',':
                     m.setCurrentCellValue((long)System.in.read());
@@ -106,5 +109,7 @@ public class TapeParser
                     break;
             }
         }
+        // print buffer to stdout
+        buf.flushBufferedData();
     }
 }

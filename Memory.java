@@ -6,7 +6,7 @@ public class Memory
     public int pointer;
     public long[] valuePointedBy = new long[TAPE_SIZE];
 
-    // tape constructor
+    // memory constructor
     public Memory()
     {
         // array is already initialized at 0;
