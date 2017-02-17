@@ -3,8 +3,8 @@ public class Memory
     // tape has 2^16 individual cells
     private final int TAPE_SIZE  = 65536;
 
-    public int pointer;
-    public long[] valuePointedBy = new long[TAPE_SIZE];
+    private int pointer;
+    private long[] valuePointedBy = new long[TAPE_SIZE];
 
     // memory constructor
     public Memory()
