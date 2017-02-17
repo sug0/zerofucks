@@ -1,7 +1,6 @@
 import java.nio.file.Files;
 import java.nio.file.Paths;
 import java.io.IOException;
-import java.io.FileNotFoundException;
 
 public class TapeParser
 {
@@ -10,7 +9,7 @@ public class TapeParser
     private static Buffer buf;
 
     // parser constructor
-    public TapeParser(String filePath) throws FileNotFoundException, IOException
+    public TapeParser(String filePath) throws IOException
     {
         buf        = new Buffer();
         tape       = new String(Files.readAllBytes(Paths.get(filePath)));

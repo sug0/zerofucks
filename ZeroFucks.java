@@ -5,7 +5,6 @@
  **/
 
 import java.io.IOException;
-import java.io.FileNotFoundException;
 
 public class ZeroFucks
 {
@@ -20,7 +19,7 @@ public class ZeroFucks
             Utils.die("Error: couldn't find file " + files[0]);
         } catch (ArrayIndexOutOfBoundsException e) {
             Utils.die("Error: no file provided");
-        } catch (RuntimeException e) {
+        } catch (Exception e) {
             Utils.die("Error: something occurred!");
         }
     }
