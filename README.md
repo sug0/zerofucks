@@ -6,7 +6,11 @@ the basics of java, and object oriented programming in general.
 ## Usage
 
 ```
+# execute source from file
 $ java -jar jar/ZeroFucks.jar tests/<someBrainFuckSource.bf>
+
+# execute interpreter in interactive mode
+$ java -jar jar/ZeroFucks.jar interactive
 ```
 
 ## Compile source

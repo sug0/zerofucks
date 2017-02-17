@@ -4,16 +4,23 @@ import java.io.IOException;
 
 public class TapeParser
 {
-    private static int streamPointer, streamEnd, iterNumber;
-    private static String tape;
+    private static int streamPointer, iterNumber;
     private static Buffer buf;
+
+    public static String tape;
 
     // parser constructor
     public TapeParser(String filePath) throws IOException
     {
         buf        = new Buffer();
         tape       = new String(Files.readAllBytes(Paths.get(filePath)));
-        streamEnd  = tape.length();
+        iterNumber = 0;
+    }
+
+    public TapeParser()
+    {
+        buf        = new Buffer();
+        tape       = "";
         iterNumber = 0;
     }
 
@@ -24,13 +31,13 @@ public class TapeParser
     }
 
     // set pointer back one position
-    private static void seekBackStream() throws IOException
+    private static void seekBackStream()
     {
         streamPointer--;
     }
 
     // set pointer one position ahead
-    private static void seekAheadStream() throws IOException
+    private static void seekAheadStream()
     {
         streamPointer++;
     }
@@ -50,7 +57,7 @@ public class TapeParser
     // cycle tape
     public static void eval(Memory m) throws IOException
     {
-        for (streamPointer = 0; streamPointer < streamEnd; streamPointer++) {
+        for (streamPointer = 0; streamPointer < tape.length(); seekAheadStream()) {
             switch (streamCurrentPointerValue()) {
                 case '-':
                     m.decrementCurrentCell();
