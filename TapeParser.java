@@ -105,6 +105,8 @@ public class TapeParser
                     break;
                 default:
                     // ignore other characters
+                    // and flush data occasionally
+                    buf.flushDataLarge();
                     break;
             }
         }
