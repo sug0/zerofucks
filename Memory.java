@@ -1,16 +1,15 @@
 public class Memory
 {
     // tape has 2^16 individual cells
-    private final int TAPE_SIZE  = 65536;
+    private static final int TAPE_SIZE  = 65536;
 
     private int pointer;
-    private long[] valuePointedBy = new long[TAPE_SIZE];
+    private long[] valuePointedBy;
 
     // memory constructor
     public Memory()
     {
-        // array is already initialized at 0;
-        // start pointer at 0
+        valuePointedBy = new long[TAPE_SIZE];
         pointer = 0;
     }
 

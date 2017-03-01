@@ -1,8 +1,11 @@
-/**
+/*
  * TODO:
  * - test different exceptions,
  *   including ArrayIndexOutOfBoundsException
- **/
+ * - fix some interpreter bugs, namely in linux
+ *   where the prompt prints twice without a newline
+ *   character after a REPL cycle
+ */
 
 import java.io.IOException;
 

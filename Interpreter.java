@@ -12,7 +12,7 @@ public class Interpreter
         stdin  = new Scanner(System.in);
     }
 
-    public static void printPrompt()
+    private static void printPrompt()
     {
         System.out.print("bf% ");
     }
@@ -21,8 +21,9 @@ public class Interpreter
     {
         while (true) {
             printPrompt();
+            parser.setTape(stdin.nextLine());
 
-            if ((parser.tape = stdin.nextLine()).equals("exit()"))
+            if (parser.getTape().equals("exit()"))
                 Utils.stopExecutionWith("Zero fucks given...");
             else
                 parser.eval(new Memory());

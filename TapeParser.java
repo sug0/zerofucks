@@ -6,8 +6,7 @@ public class TapeParser
 {
     private static int streamPointer, iterNumber;
     private static Buffer buf;
-
-    public static String tape;
+    private static String tape;
 
     // parser constructor
     public TapeParser(String filePath) throws IOException
@@ -22,6 +21,17 @@ public class TapeParser
         buf        = new Buffer();
         tape       = "";
         iterNumber = 0;
+    }
+
+    // tape operations
+    public static String getTape()
+    {
+        return tape;
+    }
+
+    public static void setTape(String value)
+    {
+        tape = value;
     }
 
     // read another char in tape

@@ -1,8 +1,8 @@
 public class Buffer
 {
     // every 5 seconds flush buffer
-    private final long NUM_SECONDS   = 5000000000L;
-    private final int FLUSH_BUF_SIZE = 5000;
+    private static final long NUM_SECONDS   = 5000000000L;
+    private static final int FLUSH_BUF_SIZE = 5000;
 
     private String data;
     private long startTime = System.nanoTime();
